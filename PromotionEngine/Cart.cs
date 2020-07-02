@@ -4,6 +4,18 @@ using System.Collections.Generic;
 
 namespace PromotionEngine
 {
+
+    public static class SkuList
+    {
+        public static readonly Dictionary<string, double> skus = new Dictionary<string, double>()
+        {
+            { "A", 50 },
+            { "B", 30 },
+            { "C", 20 },
+            { "D", 15 }
+        };
+    }
+
     public class Cart
     {
         public List<Product> Products { get; set; }
@@ -11,17 +23,7 @@ namespace PromotionEngine
 
     public class Product
     {
-        public Sku Id { get; set; }
-        public int Quantity { get; set; }
-    }
-
-    public class Sku : IEnumerable
-    {
         public string Id { get; set; }
-        public double Price { get; set; }
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        public int Quantity { get; set; }
     }
 }
